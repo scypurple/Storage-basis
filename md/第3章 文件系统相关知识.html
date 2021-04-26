@@ -1,0 +1,627 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><title></title>
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-fences-math .MathJax_SVG_Display, .md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: visible; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-math .MathJax_SVG_Display { margin-top: 8px; cursor: default; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='第3章-文件系统相关知识'><strong><span>第3章 文件系统相关知识</span></strong></h1><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='什么是文件系统'><span>什么是文件系统？</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-23</span></em></p><p><span>  文件系统定义了把文件存储于磁盘时所必须的数据结构及磁盘数据的管理方式。我们知道，磁盘是由很多个扇区（Sector）组成的，如果扇区之间不建立任何的关系，写入其中的文件就无法访问，因为无法知道文件从哪个扇区开始，文件占多少个扇区，文件有什么属性。为了访问磁盘中的数据，就必需在扇区之间建立联系，也就是需要一种逻辑上的数据存储结构。建立这种逻辑结构就是文件系统要做的事情，在磁盘上建立文件系统的过程通常称为“格式化”。</span></p><p>&nbsp;</p><p><span>  以Windows平台下最常见的FAT文件系统为例。FAT文件系统有两个重要的组成部分：FAT表（File Allocation Table）和数据存储区。FAT表是FAT文件系统的名称来源，它定义了存储数据的簇（Cluster，由2的n次方个Sector组成，n值根据分区大小而定，需综合考虑数据存取效率和存储空间的利用率）之间的链接关系，这种链接关系是一个单向链表，指向0xFF表示结束。依据一个簇编号所用bit数的不同，可分为FAT12、FAT16和FAT32文件系统。数据区存储的数据包含文件目录项（Directory Entries）和文件数据。文件目录项存储的是一个文件或目录的属性信息，包括文件名称（把目录也看成是文件）、读写属性、文件大小、创建时间、起始簇编号等，一个目录下的每个子目录和文件都对应一个表项记录。文件目录项以固定32字节的长度存储，以树型结构管理，其中根目录的位置是确定的。也就是说，根据分区根目录可以找到下级子目录和文件的起始簇编号，根据下级子目录又可以找到更下级目录或文件的起始簇编号。可见，FAT表和文件目录项是为了文件的访问和管理而建立的。应用程序要访问一个文件时，根据文件路径（逻辑分区号＋目录，如F:\software）和文件名称（如setup.exe）可从文件目录项中获得存储文件数据的起始簇号，之后从FAT表查询这个簇号对应的链表，就可以获得该文件对应的全部簇编号。从这些簇中读出全部数据，就得到一个完整的文件。</span></p><p>&nbsp;</p><p><span>　　一般来说，文件系统是和操作系统紧密结合在一起的，不同的操作系统使用不同的文件系统，但有时为了兼容，不同操作系统也使用相同的文件系统。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='cifs协议'><span>CIFS协议</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-28</span></em></p><p>&nbsp;</p><p><a href='https://v.qq.com/x/page/j0196uu61uo.html' target='_blank' class='url'>https://v.qq.com/x/page/j0196uu61uo.html</a></p><p><span>在Windows主机之间进行网络文件共享通常使用的是Microsoft的CIFS协议。CIFS基于客户端/服务器(Client/Server)模型。客户端程序请求远在服务器上的服务器程序为它提供服务；服务器获得请求并返回响应。EMC VNX系列存储作为业内统一存储的代表产品，理所当然支持所有主流的存储及文件共享协议，如：NFS、pNFS、CIFS、iSCSI等。本视频将讨论VNX系统中的CIFS协议：什么是CIFS、构成CIFS环境的各个要素、以及如何启用CIFS。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='nfs协议'><span>NFS协议</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-29</span></em></p><p>&nbsp;</p><p><a href='https://v.qq.com/x/page/u01968z6lje.html?start=undefined' target='_blank' class='url'>https://v.qq.com/x/page/u01968z6lje.html?start=undefined</a></p><p><span>NFS是Network File System的简写,即网络文件系统. NFS允许一个系统在网络上与他人共享目录和文件。通过使用NFS，用户和程序可以像访问本地文件一样访问远端系统上的文件。EMC VNX系列存储作为业内统一存储的代表产品，支持所有主流的存储及文件共享协议，如：NFS、pNFS、CIFS、iSCSI等。本视频将讨论VNX系统中的NFS协议：回顾什么是NFS、讨论演示如何通过Unisphere在VNX系统上配置NFS。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='nfsv4新特性介绍'><span>NFSv4新特性介绍</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-05-09</span></em></p><p><span>NFS是*nix平台的文件共享协议，Microsoft Windows Server 2012操作系统也已经NFSv4。主要版本有NFSv2和NFSv3。NFSv4是NFSv3的继承版本，主要针对WAN环境部署NFS做出改进并提出NFS分布式文件系统方案。本文档主要为大家介绍NFSv4的主要新特性，详细内容如下：</span></p><p><span> </span></p><p><strong><span>伪文件系统:</span></strong></p><p><span>NFSv4将所有共享使用一个虚拟文件系统展示给客户端。伪文件系统根目录（/）使用fsid=0标示，只有一个共享可以是fsid=0。客户端需要使用“nfs server ip:/”挂载伪文件系统，伪文件系统一般使用RO方式共享，其他共享可以通过mount –bind选项在伪文件系统目录下挂载。客户端挂载过程需要通过mount –t nfs4指定NFS版本为4，默认采用nfsv3。</span></p><p><span> </span></p><p><strong><span>TCP作为传输层：</span></strong></p><p><span>NFSv3同时支持TCP和UDP传输层协议。UDP是一种不可靠协议，相比TCP而言可以获得更好性能，丢包和拥塞问题交由应用程序处理；相反TCP是一种可靠传输协议，拥有自己的拥塞控制和丢包重传机制。NFSv4协议明确要求传输层提供拥塞控制功能，因此NFSv4使用TCP作为传输层，另外NFSv4对TCP重传规则有严格限制。</span></p><p><span> </span></p><p><strong><span>网络端口：</span></strong><span>  </span></p><p><span>NFSv3使用大量辅助协议，客户访问过程首先需要通过portmap/rpcbind获取rpc.mounted监听端口，然后nfs客户端访问rpc.mounted，nfs服务器根据/etc/exports文件进行客户身份验证，验证通过后nfs客户端才能与rpc.nfsd建立联系并访问共享。客户端与服务器数据交互过程的配额管理，文件锁管理以及nfs协议数据统计过程都由单独rpc进程来完成。所有这些进程除了portmap和nfsd之外都是监听动态随机端口。NFSv4自身集成辅助协议，只需要TCP 2049一个端口即可，这样极大方便NFS在防火墙后环境中部署。</span></p><p><span> </span></p><p><strong><span>服务器端拷贝：</span></strong></p><p><span>如果客户需要从一个NFS服务器拷贝数据到另外一个NFS服务器,nfsv4可以让两台NFS服务器之间直接拷贝数据，不需要经过客户端。</span></p><p><span> </span></p><p><strong><span>资源预留和回收：</span></strong></p><p><span>NFSv4为虚拟分配提供的新特性。随着存储虚拟分配功能的普及使用，nfsv4可以为预留固定大小的存储空间；同样在文件系统上删除文件后，也能够在存储上面释放相应空间。</span></p><p><span> </span></p><p><strong><span>国际化支持：</span></strong></p><p><span>NFSv4文件名、目录、链接、用户与组可以使用 UTF-8字符集，UTF-8兼容ASCII码，使得NFSv4支持更多语言。</span></p><p><span> </span></p><p><strong><span>RPC合并调用：</span></strong></p><p><span>NFSv4允许将多个请求合并为一个rpc引用，在NFSv3每个请求对应一个rpc调用。WAN环境中，NFSv4合并rpc调用可以显著降低延迟。</span></p><p><span> </span></p><p><strong><span>安全性：</span></strong></p><p><span>NFSv4用户验证采用“用户名+域名”的模式，与Windows AD验证方式类似，NFSv4强制使用Kerberos验证方式。（Kerberos与Windows AD都遵循相同RFC1510标准），这样方便windows和*nix环境混合部署。</span></p><p><span> </span></p><p><strong><span>pNFS</span></strong></p><p><span>并行NFS文件系统，元数据服务器负责用户请求调度、数据服务器负责客户请求处理。pNFS需要NFS服务器和客户端协同支持。pNFS架构示意图如下：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIX20VLVTRy0V5LLYQmsLxhQht7UuoqNpzWmiawWSiczaB3y64hD3XWP41Hlof52bWzzQibibiaYjE5dAQw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='cifs和nfs的区别'><span>CIFS和NFS的区别</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-05-01</span></em></p><p><strong><span>1、CIFS</span></strong></p><p><span> </span></p><p><span>Microsoft推出SMB（server message block）后，进一步发展，使其扩展到Internet上，成为common internet file system。</span></p><p><span> </span></p><p><span>CIFS采用C/S模式，基本网络协议：TCP/IP和IPX/SPX；</span></p><p><span> </span></p><p><span> </span></p><p><strong><span>两种资源访问模式：</span></strong></p><p><span> </span></p><p><span>（1）share level security：所有用户的共享资源访问口令是相同的，主要在win9x中使用；</span></p><p><span>（2）user level security：win NT以后的OS只提供ULS，用于必须提供正确的U/P，并且每个用户权限可以是不同的。</span></p><p><span> </span></p><p><span> </span></p><p><strong><span>C/S的交互模式：类似于三次握手；三个交互：</span></strong></p><p><span> </span></p><p><span>（1）协议选择；双方选择合适的协议进行交互；</span></p><p><span>（2）身份验证；按选定的协议登录server，由server对client进行身份验证；</span></p><p><span>（3）资源获取；认证通过后，server和client进行交互，进行文件读写等操作。</span></p><p><span> </span></p><p><span>注意：相同win OS 中，所有机器都是对等的，扮演双重角色，可以作sever，也可以是client；</span></p><p><span> </span></p><p><span>CIFS是一种协议，和具体的OS关系不大，Unix在安装samba后可以使用CIFS；</span></p><p><span> </span></p><p><span> </span></p><p><strong><span>2、CIFS和NFS的对比</span></strong></p><p><span> </span></p><p><span>（1）CIFS面向网络连接的共享协议，对网络传输的可靠性要求高，常使用TCP/IP；NFS是独立于传输的，可使用TCP或UDP；</span></p><p><span>（2）NFS缺点之一，是要求client必须安装专用软件；而CIFS集成在OS 内部，无需额外添加软件；</span></p><p><span>（3）NFS属无状态协议，而CIFS属有状态协议；NFS受故障影响小，可以自恢复交互过程，CIFS不行；从传输效率上看，CIFS优于NFS，没用太多冗余信息传送；</span></p><p><span>（4）两协议都需要文件格式转换，NFS保留了unix的文件格式特性，如所有人、组等等；CIFS则完全按照win的风格来作。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='存储系统与文件系统的关系'><span>存储系统与文件系统的关系</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-25</span></em></p><p><span>   提到NAS，通常会想到传统的NAS设备，它具有自己的文件系统，具有较大的存储容量，具有一定的文件管理和服务功能。NAS设备和客户端之间通过IP网络连接，基于NFS/CIFS协议在不同平台之间共享文件，数据的传输以文件为组织单位。</span></p><p><span> </span></p><p><span>   虽然NAS设备常被认为是一种存储架构，但NAS设备最核心的东西实际上在存储之外，那就是文件管理服务。从功能上来看，传统NAS设备就是一个带有DAS存储的文件服务器。从数据的IO路径来看，它的数据IO发生在NAS设备内部，这种架构与DAS毫无分别。而事实上，很多NAS设备内部的文件服务模块与磁盘之间是通过SCSI总线连接的。至于通过NFS/CIFS共享文件，完全属于高层协议通信，根本就不在数据IO路径上，所以数据的传输不可能以块来组织。正是由于这种功能上的重叠，在SAN出现以后，NAS头设备（或NAS网关）逐渐发展起来，NAS over SAN的方案越来越多，NAS回归了其文件服务的本质。</span></p><p><span>　　 </span></p><p><span>   由此可知，NAS与一般的应用主机在网络层次上的位置是相同的，为了在磁盘中存储数据，就必须要建立文件系统。有的NAS设备采用专有文件系统，而有的NAS设备则直接借用其操作系统支持的文件系统。由于不同的OS平台之间文件系统不兼容，所以NAS设备和客户端之间就采用通用的NFS/CIFS来共享文件。</span></p><p><span> </span></p><p><span>　　至于SAN，它提供给应用主机的就是一块未建立文件系统的“虚拟磁盘”。在上面建立什么样的文件系统，完全由主机操作系统确定。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='分布式文件系统发展史内含动态图片）'><span>分布式文件系统发展史（内含动态图片）</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-24</span></em></p><p><span>分布式存储在大数据、云计算、虚拟化场景都有勇武之地，在大部分场景还至关重要。</span></p><p>&nbsp;</p><p><span>对于一个IT从业人员，学习分布式存储相关基础知识必不可少。</span></p><p><span>今天给大家简要介绍*nix平台下分布式文件系统的发展历史。</span></p><p><span> </span></p><p><strong><span>1、单机文件系统</span></strong></p><p><span>用于操作系统和应用程序的本地存储。</span></p><p><span>缺点：数据无法再服务器之间共享。</span></p><p><span>典型代表：Ext2、Ext3、Ex4、NTFS、FAT、FAT32、XFS、JFS...</span></p><p><span>IO模型：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfuoKysc4jeGMzfLWSSLSeJmOtuJyA0rSzbK9a2uwyXFcibSjEFshX8TuA/0?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" referrerpolicy="no-referrer" alt="图片"></p><p><span>**</span>
+<span>**</span></p><p><strong><span>2、网络文件系统（简称：NAS）</span></strong></p><p><span>基于现有以太网架构，实现不同服务器之间传统文件系统数据共享。</span></p><p><span>缺点：两台服务器不能同时访问修改，性能有限。</span></p><p><span>典型代表：NFS、CIFS</span></p><p><span>IO模型：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfugjMg3KcWua6V2x5ZfU4ZXS0XjQaWuFc1slqXH3QQmdyd5mtb7D0OoQ/0?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" referrerpolicy="no-referrer" alt="图片"></p><p><strong><span>3、集群文件系统</span></strong></p><p><span>在共享存储基础上，通过集群锁，实现不同服务器能够共用一个传统文件系统。</span></p><p><span>缺点：性能一般，扩展性很有限（小于16台服务器）。</span></p><p><span>典型代表：GFS（Redhat）、GFS2（Redhat）、OCFS（Oracle）</span></p><p><span>IO模型：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfucz7b4IAP5mUNM2z5iaC2mnEOb73qczGrJ2ypc2pMgNUuUavN6rxvBlg/0?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" referrerpolicy="no-referrer" alt="图片"></p><p><span> </span></p><p><span>GFS、GFS2模型如下：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfu7X9DWib39kQZmvNFR3GqooXSfyhx6bhDsARQx2csmKGxqhLeGcKYsdg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span>默认上面三种文件系统模块都位于内核里面，NFS over Inifiband可以使用kernel bypass绕开内核。</span></p><p><span> </span></p><p><strong><span>4、分布式文件系统</span></strong></p><p><span>在传统文件系统上，通过额外模块实现数据跨服务器分布，并且自身集成raid保护功能，可以保证多台服务器同时访问、修改同一个文件系统。性能优越，扩展性很好，成本低廉。</span></p><p><span>缺点：适用场景单一，部分类型存在单点故障风险。</span></p><p><span>典型代表：lustre（Oracle）、HDFS（ASF）、gluster（Redhat）</span></p><p><span>IO模型：</span></p><p><span>主要分两大类型：一种是元数据集中管理模型；另一种是元数据分散管理模型</span></p><p><span>lustre（Oracle）</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfu351ktTpd7AZCc2PBBWibXpomlLpmhoWmP2992j17a5XYiatWDoeBr3sw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span> </span></p><p><strong><span>HDFS（ASF）</span></strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfuW3iaPdvLslHA2U1VnOJQKtDOblia83icp9ia2vLP7FJWiaGouhricDBUW08Q/0?wx_fmt=gif&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" referrerpolicy="no-referrer" alt="图片"></p><p><span>lustre和HDFS是元数据集中管理典型代表。实际数据分布存放在数据服务器上，元数据服务器负责IO请求调配，空间分配；非常适用于大文件存储。</span></p><p><span>元数据服务器可能成为系统扩展的瓶颈。</span></p><p><span> </span></p><p><strong><span>gluster（Redhat）</span></strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIXG7zZcDhKWib5UuZOib1FTfu0bYH5XzEg5koyfD8LxLPK4U19D5oSPqYzOBedXYz1JiaKNurvrPx9kg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span>gluster是元数据分散管理模型典型代表，元数据被分散放置到所有服务器上，不存在元数据单点故障。非常适用于小文件存储。</span></p><p><span> </span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='wireshark入门第一次亲密接触'><span>Wireshark入门：第一次亲密接触</span></h2><p><span>原创 林沛满 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-28</span></em></p><p><span>   很多年前，当笔者还是少年的时候，就在家里搭建过Windows Domain， Linux与Windows相互共享，交换机和路由器的虚拟环境等。因为读书百遍，其义往往不能自见。唯有亲自动手，解决实验中碰到的问题，才可能真正学会一门技术。尤其是网络协议，很多时候自以为理解了，做过实验才知道是误解。时至今日，笔者早已变成大叔，但偶尔还做做实验，以验证自己对某些概念的理解是否有误。在客串当面试官时，也侧重考察应聘者对基本概念的理解深度，因为这决定了一名工程师的职业高度。比如下面这道面试题，考的都是基础概念，却经常难住应聘者。</span></p><p>
+<span>  </span><strong><span>问题</span></strong><span>：两台服务器A和B的网络配置如下，B的子网掩码本应该是255.255.255.0，不小心配成了255.255.255.224。这两台服务器还能正常通信吗？</span></p><p>
+<span>A:</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCo4ykibKic9MZFuT2otZp2ggQPYhjv6gJmDE1zrA15qNApjstKHksk12w/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p>&nbsp;</p><p><span>B：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCgvu7vHUDlNQ3bULXkFqYfLIP4aMfIt0Hx2BgWcPfmUMNHW5auhkmUA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span> </span></p><p><span>  很多应聘者都会沉思良久（他们一定在心里把我骂了很多遍了），然后给出形形色色的答案：</span></p><p>
+<span>答案1： “A和B不能通信，因为……如果这样都行的话，子网掩码还有什么用？”（这位的反证法听上去很有道理！）</span>
+<span>答案2： “A和B能通信，因为它们可以通过ARP广播获得对方的MAC地址。”（楼上的反证法用来反驳这位正好。）</span>
+<span>答案3： “A和B能通信，但所有包都要通过默认网关192.168.26.2转发。”（请问这么复杂的结果你是怎么想到的？）</span>
+<span>答案4： “A和B不能通信。因为ARP不能跨子网。”（这个答案听上去真像是经过认真思考的。）</span></p><p>
+<span>  以上哪个答案是正确的？还是没有一个正确？如果你是第一次听到这道题，建议仔细考虑一下（就算你本来是懂的，看了上面的答案后可能都被搞晕了）。</span></p><p>
+<span>  真相只有一个，应聘者的答案却如此五花八门，这还是最基础的路由交换问题。可见对网络概念的理解不容含糊，否则差之毫厘，谬以千里。问题是就算我们反复阅读网络教程，也不一定能悟出答案。这个时候就可以借助Wireshark的抓包与分析功能了。我已经在Vmware上安装了两台Windows server，并按照面试题配好网络。如果你以前没有用过Wireshark，就开始第一次亲密接触吧。</span></p><p>
+<span>\1. 从</span><a href='http://www.wireshark.org/download.html' target='_blank' class='url'>http://www.wireshark.org/download.html</a><span>免费下载安装包，并在服务器B上安装好（把所有可选项都装上）。</span></p><p>
+<span>\2. 打开Wireshark软件，点击菜单栏上的&quot;Capture&quot;，再点击“Interfaces”。服务器B上的所有网卡都会显示在弹出的新窗口上，对着要抓包的网卡点&quot;Start&quot;。</span></p><p>
+<img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCrqOTKcuAjticOIdMK4qu0h3iasVziaWK1tgweEInnxtiaJPibib3hr0C27sQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCKvl4GDSjFQwZiaw7qkN3nPv1KyPlSHhBv1EesXtIWdYZUuAmicWcNMkQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p>
+<span>\3. 在B上ping A的IP地址（结果，是通的！）。这个操作会被Wireshark记录在网络包里。</span></p><p>&nbsp;</p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCrRIoWtKicibibLln3yZQVIZ0sdVgAzGvFqPs2p3iba8FOvibqric6iba4BSzg/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p>&nbsp;</p><p><span>\4. 在Wireshark的菜单栏上，点击“Capture”，然后点“Stop”。</span></p><p>
+<span>\5. （这一步并非必需，但存档是个好习惯）在Wireshark的菜单栏上，点击&quot;File&quot;，再点“Save”把网络包保存到硬盘上。</span></p><p>
+<span>  现在可以来分析网络包了。Wireshark的界面非常直观（如下图所示），无需大叔啰嗦，初学者根据Packet List窗口显示的Source, Destination, Protocol, Info等信息就能看懂。我们一起来看看Wireshark揭示了什么真相：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCP7B84lmE633sJkQDccfiaTribBClva5mhI21YFtibp07IM8hU0VuujS6Q/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span> </span></p><p><span>No. 1：B通过ARP广播查询默认网关192.168.26.2的MAC地址。为什么ping的是A（192.168.26.129）的IP，它反而会去查询默认网关的MAC地址呢？这是因为在B看来，A属于不同子网，跨子网通信需要默认网关的转发。而要和默认网关通信，就需要获得其MAC地址。</span></p><p>
+<span>No. 2: 默认网关192.168.26.2向B回复了其MAC地址。你也许想知道为什么这些MAC地址的开头明明是00:50:56，为什么Wireshark显示出来是Vmware？这是因为MAC地址的前3个字节表示厂商。而00:50:56被分配给Vmware公司。这是全球统一的标准，所以Wireshark可以把前六位显示成厂商名。</span></p><p>
+<span>No. 3: B发出ping包，指定目标IP是A，但目标MAC却是默认网关（这个MAC地址在中间的窗口才能看到，我已经在图中标明）。这表明B希望默认网关把包转发给A。至于默认网关有没有转发，我们目前无从得知，除非在A上也抓个包。</span></p><p>
+<span>No. 4: B收到了A发出的ARP广播，这个广播查询的是B的MAC地址。因为在A看来，B属于相同子网。同子网通信无需默认网关的参与，只要通过ARP获得对方MAC地址就行了。这个包也表明默认网关成功地把B发出的ping请求转发给A了，否则A不会尝试和B通信。</span></p><p>
+<span>No. 5: B回复了A的ARP请求，把自己的MAC地址告诉A。这说明ARP协议并不考虑子网掩码，在ARP请求来自其他子网时，也照常回复。</span></p><p>
+<span>No. 6: B终于收到了A的ping回复。从下图划线的Src MAC地址我们可以看出，这个包是从A直接过来的，而不是通过默认网关。</span></p><p><span> </span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCkXGicdEq3ZQv1vCJibL8iaqNjGr9bvQEM4HW3rtDz6BicujHFg9qGGDRZw/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p>&nbsp;</p><p><span>No. 7,8,9,10: 都是重复的ping请求和ping回复。因为A和B已经获得对方的联系方式，所以就没必要再发ARP了。</span></p><p>
+<span>  分析完这几个包，真相大白。我们可以看到通信过程是这样的：B先把ping请求交给默认网关，默认网关再转发给A，而A收到请求后会直接把ping回复发给B，形成一个三角形的环路（你之前猜对了吗？）。如下图所示：</span></p><p><img src="http://mmbiz.qpic.cn/mmbiz/TztEwAzAQIVicJTH9ljl3Zuuaiak6icGjmCq6ibWJMkicgZ9HwwfIicabu9DEpmskRXYwPb2fpCATPf9cYOg1HubicaOA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" referrerpolicy="no-referrer" alt="图片"></p><p><span> </span></p><p><span>  这不是一道纯粹的面试题。它不只考验应聘者对基础知识的掌握程度，在真实环境中也有用处。比如说，某台服务器的性能较差，就有可能是网络包走了错误的路径，而Wireshark就能帮我们找出原因。如果你希望进一步练习，不妨也搭个环境，把这道题里A和B的掩码互换一下。实验之前先想一想，这次还能ping通吗？</span></p><p>&nbsp;</p><p><span>  第一次亲密接触之后，对Wireshark有没有产生一些好感？这只是最简单的例子，如果你的工作跟网络相关，我相信你很快就会感受到Wireshark的更多魅力。而对笔者来说，Wireshark早就不只是贴心能干的助手（即便每天接受各种诡异问题的折磨，大叔目前还没有白发，谢谢Wireshark），而且还带来超乎阅读的愉悦。在接下来的一系列文章中，你将看到笔者是如何利用Wireshark，像柯南一样解决一个个看似不可能的案件的。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='数据类型概念和应用场景'><span>数据类型概念和应用场景</span></h2><p><span>原创 EMC中文技术社区 </span><a href='javascript:void(0);'><span>戴尔易安信技术支持</span></a><span> </span><em><span>2016-04-26</span></em></p><p><span>数据（data）是对客观事物的符号表示，是用于表示客观事物的未经加工的原始素材，如图形符号、数字、字母等。根据存储和管理方式，可以将数据划分为结构化数据、非结构化数据和半结构化数据。本文将介绍这三种不同数据类型的概念和主要应用场景。</span></p><p>&nbsp;</p><p><span> </span></p><p><strong><span>结构化数据</span></strong></p><p><span> </span></p><p><span>结构化数据指可以用二维表结构来逻辑表达实现的数据，用户可以对结构化数据进行高效地检索和处理。结构化数据通常用数据库管理系统保存，结合到典型的应用场景包括：企业ERP数据、财务系统数据、医疗HIS数据库、政府行政审批和教育一卡通数据等等。</span></p><p><span> </span></p><p><span> </span></p><p><strong><span>非结构化数据</span></strong></p><p><span> </span></p><p><span>非结构化数据无法用二维表结构进行存储。这些数据比较难遇被应用检索和检查，主要包括视频、音频、图片、图像、文档、文本等形式。典型应用包括视频监控、医疗影像系统和文件服务器等。新创建数据绝大多数都是非结构化数据。</span></p><p><span> </span></p><p><span> </span></p><p><strong><span>半结构化数据</span></strong></p><p><span> </span></p><p><span>半结构化数据就是介于完全结构化数据（如关系型数据库、面向对象数据库中的数据）和完全无结构的数据（如声音、图像文件等）之间的数据。这些数据对于存储、备份、共享以及归档有一定要求。半结构化数据主要包括：包括邮件、HTML、报表、资源库等等。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
